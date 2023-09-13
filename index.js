@@ -50,6 +50,7 @@ client.on('interactionCreate', async (interaction) => {
   
     const command = interaction.commandName;
     if (command === 'berb') {
+      await interaction.reply('Working on it');
       const searchFilename = interaction.options.getString('id').trim().toLowerCase();
   
       if (!searchFilename) {
@@ -99,7 +100,8 @@ client.on('interactionCreate', async (interaction) => {
                 { name: 'Eyeware', value: eyeware, inline:true }
               )
               .setImage(imageLink)
-            await interaction.reply({ embeds: [embed] });
+              await interaction.editReply("Done");
+              await interaction.editReply({ embeds: [embed] });
           }
         });
     }
